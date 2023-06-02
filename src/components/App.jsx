@@ -31,10 +31,12 @@ export class App extends Component {
       })
     }
   }
+
   componentDidUpdate(_, prevState) {
     if (prevState.contacts !== this.state.contacts)
       localStorage.setItem(CONTACTS_KEY, JSON.stringify(this.state.contacts));
   }
+  
   addContact = task => {
     const searchSameName = this.state.contacts
       .map(cont => cont.name.toLowerCase())
